@@ -36,6 +36,16 @@ public class GPSLocation {
         return locationData;
     }
 
+    /**
+     * Calculates the distance between two points on the Earth's surface using the
+     * Haversine formula [haversine(theta) = sin^2 (theta/2)]
+     * 
+     * @param lat1 The latitude of the first point in degrees.
+     * @param lon1 The longitude of the first point in degrees.
+     * @param lat2 The latitude of the second point in degrees.
+     * @param lon2 The longitude of the second point in degrees.
+     * @return The distance between the two points in kilometers.
+     */
     public double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
         double earthRadius = 6371; // Earth's radius in kilometers
 
@@ -50,28 +60,4 @@ public class GPSLocation {
 
         return earthRadius * c;
     }
-
-    // public static void main(String[] args) {
-    //     GPSLocation gpsLocation = new GPSLocation();
-    //     gpsLocation.getUserLocation();
-
-    //     System.out.println("User's Location:");
-    //     System.out.println(gpsLocation.getUserLocationData());
-
-    //     // Coordinates of the nearby location (example: New York City)
-    //     double nearbyLatitude = 40.7128;
-    //     double nearbyLongitude = -74.0060;
-
-    //     // Extract user's latitude and longitude from the location data
-   
-    //     double userLatitude = Double.parseDouble(locationParts[8].split(":")[1].trim());
-    //     double userLongitude = Double.parseDouble(locationParts[9].split(":")[1].trim());
-
-    //     // Calculate the distance between the user's location and the nearby location
-    //     double distance = gpsLocation.calculateDistance(userLatitude, userLongitude, nearbyLatitude, nearbyLongitude);
-
-    //     // Display the distance between the user's location and the nearby location
-    //     System.out.println("Distance to the nearby location:");
-    //     System.out.println(distance + " kilometers");
-    // }
 }
