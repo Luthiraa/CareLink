@@ -28,9 +28,6 @@ public class HospitalLocator {
                         nearbyShelters[0][0] = hName;
                         nearbyShelters[0][1] = String.valueOf(distance);
                     }
-                    // System.out.println("Latitude: " + latitude);
-                    // System.out.println("Longitude: " + longitude);
-                    // System.out.println("------------------------");
                 }
                 
             }
