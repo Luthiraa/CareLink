@@ -47,7 +47,7 @@ public class GPSLocation {
      * @param lon2 The longitude of the second point in degrees.
      * @return The distance between the two points in kilometers.
      */
-    public double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
+    public static double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
         double earthRadius = 6371; // Earth's radius in kilometers
 
         double dLat = Math.toRadians(lat2 - lat1);

@@ -1,31 +1,60 @@
-public class myHealth {
-    private String name;
-    private int age;
-    private String gender;
+//import necessary libraries
+import java.time.*;
+
+public class myHealth extends HealthInformation {
     private String location;
+    public final boolean married = false;
     GPSLocation gps = new GPSLocation();
 
     public myHealth(String name, int age, String gender) {
+        super();
+        this.location = gps.getUserLocationData();
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation() {
+        this.location = gps.getUserLocationData();
+    }
+}
+
+class Person extends HealthInformation {
+    LocalDate today = LocalDate.now();
+    private int year = today.getYear();
+    private Month month = today.getMonth();
+    private int day = today.getDayOfMonth();
+    private String name;
+    private int age;
+    private String gender;
+    private final int defaultAge = 18;
+    public Date date = new Date(month, day, year);
+
+    public Person(String name, int age, String gender) {
+        super();
         this.name = name;
         this.age = age;
         this.gender = gender;
-        this.location = gps.getUserLocationData();
+    }
+
+    public Person(String name, int age) {
+        super();
+        this.name = name;
+        this.age = age;
+        this.gender = null;
     }
 
     public String getName() {
         return name;
     }
 
-    public int age() {
+    public int getAge() {
         return age;
     }
 
-    public String gender() {
+    public String getGender() {
         return gender;
-    }
-
-    public String getLocation() {
-        return location;
     }
 
     public void setName(String name) {
@@ -40,9 +69,11 @@ public class myHealth {
         this.gender = gender;
     }
 
-    public void setLocation () {
-        this.location = gps.getUserLocationData();
+    public String getLocation() {
+        return null;
     }
-    
 
+    public Date getDate() {
+        return date;
+    }
 }
