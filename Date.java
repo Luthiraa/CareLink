@@ -1,6 +1,7 @@
+import java.time.LocalDate;
 import java.time.Month;
 
-class Date {
+public class Date {
     private Month month;
     private int day;
     private int year;
@@ -10,22 +11,6 @@ class Date {
         this.day = day;
         this.year = year;
 
-    }
-
-    public Month getMonth() {
-        return month;
-    }
-
-    public int getDay() {
-        return day;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public String toString() {
-        return day + "/" + month + "/" + year;
     }
 
 }

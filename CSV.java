@@ -8,9 +8,9 @@ import java.util.Set;
 
 public class CSV {
     public void newCSV() {
-        String inputFile = "CSVfiles/data-shetler.csv"; // Replace with your input CSV file
+        String inputFile = "CSVfiles/data_shelter.csv"; // Replace with your input CSV file
         String outputFile = "CSVfiles/shelters.csv"; // Replace with the desired output CSV file
-        int columnIndex = 8; // Specify the index of the column to check uniqueness (0-based index)
+        int columnIndex = 4; // Specify the index of the column to check uniqueness (0-based index)
 
         try {
             Set<String> uniqueValues = new HashSet<>();

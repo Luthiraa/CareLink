@@ -1,16 +1,16 @@
-//import necessary libraries
 import java.time.*;
 
-public class myHealth extends HealthInformation {
+public class myHealth extends Person {
     private String location;
     public final boolean married = false;
     GPSLocation gps = new GPSLocation();
 
     public myHealth(String name, int age, String gender) {
-        super();
+        super(name, age, gender);
         this.location = gps.getUserLocationData();
     }
 
+    @Override
     public String getLocation() {
         return location;
     }
@@ -18,6 +18,7 @@ public class myHealth extends HealthInformation {
     public void setLocation() {
         this.location = gps.getUserLocationData();
     }
+
 }
 
 class Person extends HealthInformation {
@@ -25,10 +26,10 @@ class Person extends HealthInformation {
     private int year = today.getYear();
     private Month month = today.getMonth();
     private int day = today.getDayOfMonth();
-    private String name;
-    private int age;
-    private String gender;
-    private final int defaultAge = 18;
+    private static String name;
+    private static int age;
+    private static String gender;
+    private static final int defaultAge = 18;
     public Date date = new Date(month, day, year);
 
     public Person(String name, int age, String gender) {
@@ -69,11 +70,17 @@ class Person extends HealthInformation {
         this.gender = gender;
     }
 
-    public String getLocation() {
-        return null;
-    }
-
     public Date getDate() {
         return date;
+    }
+
+    // public String toString() {
+    // if (date instanceof Date)
+    // (Date date).getDate();
+    // }
+
+    @Override
+    public String getLocation() {
+        throw new UnsupportedOperationException("Unimplemented method 'getLocation'");
     }
 }

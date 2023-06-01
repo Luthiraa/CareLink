@@ -14,32 +14,53 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in); // create scanner object
         boolean run = true; // set boolean run variable to true
+        System.out.println("What's your name:");
+        String name = scan.nextLine();
+        System.out.println("what is your age:");
+        int age = scan.nextInt();
+        scan.nextLine();
+        System.out.println("What is your gender:");
+        String gender = scan.nextLine();
+        CSV newCSV = new CSV();
+        newCSV.newCSV();
+        Person myhealth1; // Upcasting
+        myhealth1 = new myHealth(name, age, gender);
         while (run) {
             snakeText(menu(), 2); // call snaketext method to print menu function with a interval of 2
                                   // milliseconds
             int choice = scan.nextInt(); // gets choice from user
             switch (choice) { // switch statements
                 case 1: // first case
-                    HospitalLocator hLocator = new HospitalLocator(); // instance of HospitalLocator class for locating hospital 
+                    HospitalLocator hLocator = new HospitalLocator(); // instance of HospitalLocator class for locating
                     hLocator.readCoords(); // calls readcoords method in the hospitallocator class
+                    // myHealth.getDate();
+                    break;
                 case 2: // second case
                     foodBank fLocator = new foodBank(); // instance of foodbank clas for locating foodbanks
                     fLocator.readCoords(); // calls readcoords method in foodbank class
-                    break; //break
+                    // myHealth.getDate();
+                    break; // break
                 case 3: // third case
                     healthStats stats = new healthStats(); // instance of healthstats class
-                    stats.healthStat(); // calls hehalthstat method in healthstats class
-                case 4: // forth case
+                    stats.healthStat();// calls hehalthstat method in healthstats class
+                    // myHealth.getDate();
+                    break;
+                case 4:
+                    Shelter shelter = new Shelter();
+                    shelter.readCoords();
+                    // myHealth.getDate();
+                case 5: // Fifth Case
                     snakeText("Press enter to continue", 2); // calls staketext method to print continue
                     scan.nextLine();
                     clearScreen(); // clear the screen
                     snakeText("Program closed.", 20); // prints program closed
                     run = false; // closes program
-                    break;  //break
+                    break; // break
 
             }
         }
-        scan.close();  //close scanner
+        scan.close(); // close scanner
+
     }
 
     /**
@@ -118,7 +139,8 @@ public class Main {
                 "* 1) Hospital Locator                           *\n" +
                 "* 2) Food Bank Locator                          *\n" +
                 "* 3) My Health                                  *\n" +
-                "* 4) Exit                                       *\n" +
+                "* 4) Shelter Locator                            *\n" +
+                "* 5) Exit                                       *\n" +
                 "*                                               *\n" +
                 "* Enter choice:                                 *\n" +
                 "*                                               *\n" +

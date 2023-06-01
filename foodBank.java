@@ -2,7 +2,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.DecimalFormat;
 
 /**
  * The foodbank locator class is responsible for reading foodbank coordinates from a CSV file
@@ -17,7 +16,6 @@ public class foodBank {
         String csvFile = "CSVfiles/foodBank.csv"; // Path to the CSV file containing foodbank data
         String delimiter = ","; // CSV delimiter
         GPSLocation gpsLocation = new GPSLocation(); // Instance of GPSLocation class for handling GPS data
-        myHealth health = new myHealth(csvFile, 0, delimiter); // Instance of myHealth class for health-related functionality
         String[][] nearbyFoodBBanks = new String[3][2]; // Array to store nearby foodbank and their distances
         
         try (BufferedReader reader = new BufferedReader(new FileReader(csvFile))) {
@@ -39,6 +37,8 @@ public class foodBank {
                     if (distance < 10) { // if the distance is less than 10
                         nearbyFoodBBanks[0][0] = hName; // the first column of nearbyFoodBank will store the name of the foodbank
                         nearbyFoodBBanks[0][1] = String.valueOf(distance); // the second column of nearbyFoodBank will store the distance form the user's lcoation
+                    }else{
+                        System.out.println("There are no food banks within a 10km radius.");
                     }
                 }
             }

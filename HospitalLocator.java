@@ -39,6 +39,8 @@ public class HospitalLocator {
                     if (distance < 10) { // if the distance is less than 10
                         nearbyHospitals[0][0] = hName; // the first column of nearbyHospital will store the name of the hospital
                         nearbyHospitals[0][1] = String.valueOf(distance); // the second column of nearbyHospital will store the distance form the user's lcoation
+                    }else{
+                        System.out.println("There are no hospitals to be found within a 10km radius of your location.");
                     }
                 }
             }

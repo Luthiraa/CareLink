@@ -1,0 +1,139 @@
++--------------------------------------+
+|               myHealth                |
++--------------------------------------+
+| - location: String                    |
+| + married: boolean (final)            |
+| - gps: GPSLocation                    |
++--------------------------------------+
+| + myHealth(name: String, age: int,    |
+|   gender: String)                     |
+| + getLocation(): String               |
+| + setLocation(): void                 |
++--------------------------------------+
+                ^
+                |
+                |
+                |
+                v
++--------------------------------------+
+|                Person                 |                      +-------------------------------------------+
++--------------------------------------+                       |        Date                               |    
+| - today: LocalDate                    |                      +-------------------------------------------+     
+| - year: int                           |                      | - month: Month                            |
+| - month: Month                        |  <--------------->   | - day: int                                |
+| - day: int                            |                      | - year: int                               |
+| - name: String                        |                      +-------------------------------------------+
+| - age: int                            |                      | + Date(month: Month, day: int, year: int) |
+| - gender: String                      |                      | + getMonth(): Month                       |
+| + defaultAge: int (final)             |                      | + getDay(): int                           |
+| + date: Date                          |                      | + getYear(): int                          |
++--------------------------------------+                       +-------------------------------------------+  
+
+| + Person(name: String, age: int,      |
+|   gender: String)                     |
+| + Person(name: String, age: int)      |
+| + getName(): String                   |
+| + getAge(): int                       |
+| + getGender(): String                 |
+| + setName(name: String): void         |
+| + setAge(age: int): void              |
+| + setGender(gender: String): void     |
+| + getDate(): Date                     |
+| + getLocation(): String               |
++--------------------------------------+
+                        ^
+                        |
+                        |
+                        |
+                        v
++--------------------------------------+
+|           HealthInformation           |
++--------------------------------------+
+|                                       |
++--------------------------------------+
+| + getLocation(): String               |
++--------------------------------------+
+
+
++---------------------------+
+|           Shelter         |
++---------------------------+
+|                           |
++---------------------------+
+| + readCoords(): void      |
++---------------------------+
+
+
+
++------------------------------------+
+|      Main                          |
++------------------------------------+
+| - main(String[]) : void            |
+| - snakeText(String, int) : void    |
+| - snakeText(String) : void         |
+| - clearScreen() : void             |
+| - menu() : String                  |
++------------------------------------+
+
+
+
++-----------------------+
+|   HospitalLocator     |
++-----------------------+
+|                       |
++-----------------------+
+| + readCoords(): void  |
++-----------------------+
+
+
++-----------------------+
+|       foodBank        |
++-----------------------+
+|                       |
++-----------------------+
+| + readCoords(): void  |
++-----------------------+
+
++--------------------------------------------------------------+
+|   GPSLocation                                                |
++--------------------------------------------------------------+
+| - locationData : String                                      |
++--------------------------------------------------------------+
+| + getUserLocation() : void                                   |
+| + getUserLocationData() : String                             |
+| + calculateDistance(double, double, double, double) : double |
++--------------------------------------------------------------+
+
+
++--------------------------------------+
+|           healthStats                |
++--------------------------------------+
+| - ANSI_BLUE: String                  |
++--------------------------------------+
+| + healthStats(): void                |
+| - clearScreen(): void                |
+| - sleep(int): void                   |
+| - sleep(long): void                  |
+| - countDown(int): void               |
+| - typeWriter(String): void           |
+| - image(String): void                |
+| - heartHealth(Scanner, String): void |
+| - averageCalcHeartBPM(): void        |
+| - binarySearch(): void               |
+| - BMI(): void                        |
++--------------------------------------+
+
+
++---------------------------------+
+|              CSV                |
++---------------------------------+
+| - inputFile: String             |
+| - outputFile: String            |
+| - columnIndex: int              |
++---------------------------------+
+| + newCSV(): void                |
+| - uniqueValues: Set<String>     |
+| - reader: BufferedReader        |
+| - writer: BufferedWriter        |
+| - line: String                  |
++---------------------------------+

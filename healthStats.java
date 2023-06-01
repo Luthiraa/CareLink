@@ -381,67 +381,6 @@ public class healthStats {
 
     /**
      *
-     * My posture
-     *
-     * @param scan       the scan.
-     * @param dateString the date string.
-     */
-    public static void MyPosture(Scanner scan, String dateString) {
-
-        clearScreen();
-        String postureString = "";
-        System.out.println("Press Enter To Continue...");
-        scan.nextLine();
-        scan.nextLine();
-        clearScreen();
-        System.out.println("Please type \"yes\" if you would like to start the posture checker... Else type \"no\".");
-        String choice = scan.nextLine();
-        choice = choice.toLowerCase();
-        sleep(500);
-        clearScreen();
-        System.out.println("In order for you to mainitan and healthy posture, you will be reminded at a set interval.");
-        sleep(100);
-        System.out.println(
-                "To set this interval please enter an integer value (minutes) in which you would like to be reminded to fix your posture.");
-        sleep(500);
-        int interval = scan.nextInt();
-        while (true) {
-            if (choice.equals("yes")) {
-                ImageIcon icon = new ImageIcon("images/posture.gif");
-                Image image = icon.getImage();
-                // Create a new JFrame object
-                JFrame frame = new JFrame("Your Posture Reminder");
-                // Create a new JLabel object and set its icon to the image
-                JLabel label = new JLabel("You will be reminded every " + interval + " minutes to fix your posture.");
-                label.setIcon(icon);
-                // Add the label to the frame
-                frame.getContentPane().add(label);
-                // Configure the frame
-                frame.pack();
-                frame.setVisible(true);
-                long minutes = (interval * 60000);
-                if (frame.isVisible()) { // if frame is viible
-                    sleep(minutes);
-                    clearScreen();
-                }
-                if (!frame.isVisible()) { // frame not visible
-                    try {
-                        System.out.println("Exit the program to end this process.");
-                        String escape = scan.nextLine();
-                        if (escape.toLowerCase().equals("stop")) {
-                        }
-                    } catch (Exception e) {
-                        System.out.println("Exception Occured!"); // Ignore interruptions
-                    }
-                }
-            } else {
-            }
-        }
-
-    }
-
-    /**
-     *
      * Binary search
      *
      */
@@ -531,7 +470,7 @@ public class healthStats {
             System.out.printf("Person %d: %.2f\n", (i + 1), bmi);
         }
     }
-    
+
     // This function takes a dateString as an argument and records the user's screen
     // time for a session.
     public static void ScreenTime(String dateString) {
@@ -601,7 +540,6 @@ public class healthStats {
      * @param dateString the date string.
      */
     public static void bloodPressureFunction(Scanner scan, String dateString) {
-
 
         System.out.println("\nPress Enter To Continue...");
         scan.nextLine();
